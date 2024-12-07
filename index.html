@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AROMATICA</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="flex">
+        <div class="flex0">
+<p>새해 보습 소원 <b>아로마티카</b>와 함께</p>
+        </div>
+    <div class="flex1">
+        <a href="https://aromatica.co.kr/" target="_blank">
+        <div class="grid1">
+            <div class="box"></div>
+        <h1>FREE GIFT</h1>
+        <p>구매금액별<br>
+        사은품 증정</p>
+        </div>
+    </a>
+        <div class="grid2">
+         <div class="grid2-2"></div>
+            <div class="grid2-1">
+                <p>2025.01.02 AM 00:00 - 02.01 AM 10:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex2">
+        <div class="grid3">
+        </div>
+        <div class="grid4">
+ 
+            <div class="grid4-txt">
+                <p>전 제품</p>
+                <p>30% 할인</p>
+               <a href="https://aromatica.co.kr/" target="_blank"> <button class="custom-btn btn-2"><span>쿠폰 받기</span></button></a>
+            </div>
+
+            <img src="Img/Blob6.png" alt="">
+        </div>
+    </div>
+
+    <div class="flex3">
+        <p>할인 시작까지</p>
+        <h2 id="remain-time"></h2>
+
+    </div>
+    <footer>
+        <p>본 이벤트는 아로마티카 공식몰에 로그인 한 회원님 대상으로 진행합니다. 네이버 페이 구매자 및 비회원은 할인 및 사은품 적용이 불가합니다.</p>
+            <p>
+본 행사는 사전 안내없이 변경 및 조기 종료될 수 있습니다. 만원 이상 구매 시 사용 가능하며, 사용 전 쿠폰 사용 기간을 꼭 확인 바랍니다.
+            </p>
+    </footer>
+    </div>
+
+
+    <script>
+const remainTime = document.querySelector("#remain-time");
+
+function diffDay() {
+    const masTime = new Date("2025-01-02");
+    const todayTime = new Date();
+    
+    const diff = masTime - todayTime;
+
+    const diffDay = String(Math.floor(diff / (1000*60*60*24)));
+    const diffHour =String( Math.floor((diff / (1000*60*60)) % 24)).padStart(2,"0");
+    const diffMin = String(Math.floor((diff / (1000*60)) % 60)).padStart(2,"0");
+    const diffSec = String(Math.floor(diff / 1000 % 60)).padStart(2,"0");
+    
+    remainTime.innerText = `${diffDay}일 ${diffHour}시간 ${diffMin}분 ${diffSec}초`;
+}
+
+diffDay();
+setInterval(diffDay, 1000);
+    </script>
+
+</body>
+
+</html>
